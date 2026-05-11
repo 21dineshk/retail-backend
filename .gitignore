@@ -1,0 +1,40 @@
+# Maven build output
+target/
+*.jar
+*.war
+*.class
+
+# Maven Wrapper local cache
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local env overrides
+.env
+.env.local
+application-local.yml
+application-local.properties
+
+# Spring Boot dev tools
+.spring-boot-devtools.properties
+
+# H2 (we use in-memory but just in case)
+*.h2.db
+*.mv.db
+*.trace.db

@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: retail-backend
+
+  datasource:
+    url: jdbc:h2:mem:retail;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 500
+        order_inserts: true
+        order_updates: true
+    open-in-view: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+server:
+  port: 8090
+  address: 0.0.0.0
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+
+retail:
+  seed:
+    products-csv: classpath:seed/products.csv
+    users: 8
+    orders-per-user-min: 3
+    orders-per-user-max: 8
+
+logging:
+  level:
+    org.hibernate.SQL: WARN
+    org.hibernate.orm.jdbc.bind: WARN
+    com.example.retail: INFO
